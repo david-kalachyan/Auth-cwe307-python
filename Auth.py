@@ -17,15 +17,13 @@ class Authenticator:
         return False
 
     def handle_failed_login(self):
-        # Check if login attempts exceed a threshold (e.g., 3 failed attempts)
-        if self.failed_login_attempts >= 3:
-            print("Too many failed login attempts. Account locked.")
-            # Additional logic to lock the account or enforce a delay
-            # (This is where proper rate-limiting measures would be implemented)
+        print(f"Failed login attempts: {self.failed_login_attempts}")
+        # Lack of proper rate-limiting measures
+        # (This is where proper rate-limiting measures should be implemented)
 
 # Example usage
 authenticator = Authenticator()
 
 # Simulate multiple login attempts
-for _ in range(5):
+for _ in range(10):
     authenticator.login("user123", "wrong_password")
